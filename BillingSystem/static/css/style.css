@@ -3,3 +3,14 @@ body{
 	color: darkred;
 	background-color: #92F0E5;
 }
+#cards.card-body{
+	background-color: #92F0E5;
+	font-family: sans-serif;
+	text-transform: capitalize;
+	margin: 7PX;
+	text-shadow: currentColor;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
