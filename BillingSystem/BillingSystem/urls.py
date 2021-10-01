@@ -18,8 +18,9 @@ from django.urls import path,include
 
 
 urlpatterns = [
+    path('',include('user.urls')),
     path('admin/', admin.site.urls),
-    path('products/',include('bucket.urls'))
+    path('bucket/',include('bucket.urls')),
 ]
 
 #In the project urls.py file

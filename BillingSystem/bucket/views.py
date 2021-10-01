@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import products
 # Create your views here.
-def index(request):
+def bucket(request):
     items=products.objects.all()
-    return render(request,'index.html',{"items":items})
+    return render(request,'bucket.html',{"items":items})

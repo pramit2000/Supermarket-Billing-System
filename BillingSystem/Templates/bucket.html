@@ -1,0 +1,47 @@
+	{% extends 'base.html'%}
+
+	{% block title %}<title>Supermarket | products</title>{%endblock%}
+	{% block body%} 
+	<body>
+		
+<div class="col-9" style="float: left;">	
+
+   {% for i in items %}
+   <div class="card" style="width: 18rem;" >
+  <div class="card-body" id="cards">
+    <h5 class="card-title">{{i.product_name}}</h5>
+    <p class="card-text">{{i.description}}</p>
+    <p class="card-text">{{i.price}}</p>
+     <button id="add" class="btn btn-outline-danger" type="submit" > Add</button>
+  </div>
+</div>
+     
+     	{% endfor %}
+ </div> 
+
+ <!--right side--> 
+ <div class="col-3" style="float: left; ">
+
+    <form method="post" enctype="multipart/form-data" action="submitDetails">
+        {% csrf_token %}
+<div>
+
+    <h2>Billing Details</h2><br><br>
+
+    Phone Number: <input type="text" name="customerNumber" > <br><br>
+
+    <table class="table" id="sales"></table>
+<br>
+<br>
+<span id="total"></span>
+</div>
+<input type="hidden" name="purchaseDetails" id="purchaseDetails">
+<input type="hidden" name="totalValue" id ="totalValue">
+<input type="submit" value="Submit">
+</form>
+</div>  	
+		
+
+	</body>
+
+	  {% endblock %}
