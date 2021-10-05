@@ -2,7 +2,7 @@
 
 {% block title %}Home{% endblock title %}
 {% block body %}
-    <form method="post" action="checkUser/">
+    <form method="post" action="/checkUser/">
      {% csrf_token %}
         <label>Email ID </label>
         <input type="text">
