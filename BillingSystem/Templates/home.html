@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 
+{% block style %}
+<style type="text/css">
+  body{
+    background-image: url(F:/test.jpg);
+  }
+</style>
+  
+{% endblock style %}
+
 {% block title %}Home{% endblock title %}
 {% block body %}
     <!-- <form method="post" action="/checkUser/">
@@ -11,7 +20,7 @@
        <button type="submit" class="btn btn-secondary">Login</button>
     </form> -->
 
-<<body>
+<body>
     <section class="vh-100 gradient-custom">
       <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
