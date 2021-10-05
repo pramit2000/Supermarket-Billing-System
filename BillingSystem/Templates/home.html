@@ -1,4 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock title %}
-{% block body %}this is Home page{% endblock body %}
+{% block body %}
+    <form method="post" action="checkUser/">
+     {% csrf_token %}
+        <label>Email ID </label>
+        <input type="text">
+        <label>Password</label>
+        <input type="password">
+       <button type="submit" class="btn btn-secondary">Login</button>
+    </form>
+{% endblock body %}
+
