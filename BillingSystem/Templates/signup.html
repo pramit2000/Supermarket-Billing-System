@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock title %}
+{% block body %}
+	<div class="w-75 p-3" class="position-absolute">
+		<form class="row g-3" action="/signup/" method="post">
+			{% csrf_token %}
+
+	<div class="col-md-6">
+		<label for="inputName" class="form-label">Name</label>
+		<input type="text" class="form-control" id="inputName">
+	  </div>
+
+	<div class="col-md-2">
+  		<label for="inputContact" class="form-label">Gender</label>        
+        <select class="form-control" id="gender2">
+          <option selected>Choose...</option>
+          <option value="1">Male</option>
+          <option value="2">Female</option>
+		  <option value="3">Other</option>
+        </select>  
+        
+    </div>
+	<div class="col-md-6">
+		<label for="inputContact" class="form-label">Contact No</label>
+		<input type="text" class="form-control" id="inputContact">
+	  </div>
+			<div class="col-md-6">
+		<label for="inputCity" class="form-label">City</label>
+		<input type="text" class="form-control" id="inputCity">
+	  </div>
+
+	  <div class="col-md-4">
+		<label for="inputState" class="form-label">State</label>
+		<select id="inputState" class="form-select">
+		  <option selected>Choose...</option>
+		  <option>Andhra Pradesh</option>
+			 <option>Assam</option>
+			 <option>Bihar</option>
+			 <option>Chhattisgarh</option>
+			 <option>Goa</option>
+			 <option>Gujarat</option>
+			 <option>Haryana</option>
+			 <option>Himachal Pradesh</option>
+			 <option>Jharkhand</option>
+			 <option>Karnataka</option>
+			 <option>Tripura</option>
+			 <option>Uttar Pradesh</option>
+			 <option>Uttarakhand</option>
+			 <option>West Bengal</option>
+
+		</select>
+	  </div>
+	  <div class="col-md-2">
+		<label for="inputPin" class="form-label">PIN</label>
+		<input type="text" class="form-control" id="inputPin">
+	  </div>
+			<br>
+			<div class="col-md-6">
+		<label for="inputEmail4" class="form-label">Email</label>
+		<input type="email" class="form-control" id="inputEmail4">
+	  </div>
+			<br>
+			<div class="col-md-6">
+		<label for="inputPassword4" class="form-label">Password</label>
+		<input type="password" class="form-control" id="inputPassword4">
+	  </div>
+			<br>
+			<div class="col-md-6">
+		<label for="inputConfirmPassword4" class="form-label">Confirm Password</label>
+		<input type="password" class="form-control" id="inputConfirmPassword4">
+	  </div>
+	  		<br>
+			<div class="col-md-2">
+			<label for="date">Date</label>
+			<input type="date" class="form-control" id="date" >
+	  		<br>
+
+
+	  <div class="col-12">
+
+		<button type="submit" class="btn btn-secondary">Sign in</button>
+	  </div>
+	</div>
+</form>
+{% endblock body %}
