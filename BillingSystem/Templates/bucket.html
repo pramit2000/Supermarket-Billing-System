@@ -1,9 +1,7 @@
-	{% extends 'base.html'%}
+{% extends 'base.html'%}
 
-	{% block title %}<title>Supermarket | products</title>{%endblock%}
-	{% block body%} 
-	<body>
-		
+{% block title %}Bucket{%endblock title%}
+{% block body%} 
 <div class="col-9" style="float: left;">	
 
    {% for i in items %}
@@ -41,7 +39,4 @@
 </form>
 </div>  	
 		
-
-	</body>
-
-	  {% endblock %}
+{% endblock body %}
