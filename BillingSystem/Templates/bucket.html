@@ -1,42 +1,59 @@
 {% extends 'base.html'%}
+{% load static %}
 
-{% block title %}Bucket{%endblock title%}
+
 {% block body%} 
 <div class="col-9" style="float: left;">	
 
    {% for i in items %}
    <div class="card" style="width: 18rem;" >
   <div class="card-body" id="cards">
-    <h5 class="card-title">{{i.product_name}}</h5>
-    <p class="card-text">{{i.description}}</p>
-    <p class="card-text">{{i.price}}</p>
-     <button id="add" class="btn btn-outline-danger" type="submit" > Add</button>
+     <label  class="card-text" id="p-name" >{{i.product_name}}</label> 
+    <p class="card-text" >{{i.description}}</p>
+    <label  class="card-text" id="p-price" >{{i.price}}</label> 
+     <button  class="btn btn-outline-danger" type="submit" onclick="addHtmlTableRow();" > Add</button>
   </div>
 </div>
      
      	{% endfor %}
  </div> 
-
+<label id="tt">145</label>
  <!--right side--> 
- <div class="col-3" style="float: left; ">
-
-    <form method="post" enctype="multipart/form-data" action="submitDetails">
-        {% csrf_token %}
-<div>
-
-    <h2>Billing Details</h2><br><br>
-
-    Phone Number: <input type="text" name="customerNumber" > <br><br>
-
-    <table class="table" id="sales"></table>
-<br>
-<br>
-<span id="total"></span>
-</div>
-<input type="hidden" name="purchaseDetails" id="purchaseDetails">
-<input type="hidden" name="totalValue" id ="totalValue">
-<input type="submit" value="Submit">
-</form>
-</div>  	
+ <div class="container">
+            <div class="tab-tab-1">
+                <table id="table" border="3">
+                   <thead>
+                       <tr>
+                           <td>Product Name</td><br>
+                           <td>Product Price</td>
+                       </tr>
+                       
+                   </thead>
+                   <tr>
+                       <td></td>
+                   </tr>
+                    
+                </table>
+            </div>
+ 
+<script type="text/javascript">
+    function addHtmlTableRow()
+            {
+           // 
+            let table=document.getElementById("table");
+            let newRow = table.insertRow(table.length);
+            let   cell1 = newRow.insertCell(0);
+            let   cell2 = newRow.insertCell(1);
+           let  pname=document.getElementById("p-naame").innerHTML;
+            let pprice=document.getElementById("p-price").innerHTML;
+             let a=document.getElementById("tt").innerHTML;
+            cell1.innerHTML = a;
+            //cell2.innerHTML = pprice;
+           alert(pname);
+          // alert(a);
+                
+                
+            }
+</script>  	
 		
 {% endblock body %}
