@@ -1,5 +1,4 @@
 from django.shortcuts import render,redirect
-
 # Create your views here.
 from .models import emp_login
 
@@ -7,11 +6,15 @@ from .models import emp_login
 def home(request):
     return render(request,'home.html')
 
+
+
 def signup(request):
     if request.method == 'GET':
         return render(request,'signup.html')
     elif request.method == 'POST':
         return redirect('/')
+
+
 
 def signin(request):
     if request.method == 'GET' :
@@ -24,7 +27,9 @@ def signin(request):
     if flag:
         return render(request,'empDashboard.html')
     else:
-        return redirect('/signin/')
+        return redirect('/signin/', {"flag": flag})
+
+
 
 def checkLoginDetailsOfEmp(email,password):
     query = "SELECT id,email_id_id FROM user_emp_login where email_id_id = '"+email+"' and password = '"+password+"' LIMIT 1"
