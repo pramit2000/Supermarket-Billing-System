@@ -8,16 +8,16 @@
    {% for i in items %}
    <div class="card" style="width: 18rem;" >
   <div class="card-body" id="cards">
-     <label  class="card-text" id="p-name" value="">{{i.product_name}}</label> 
+     <label  class="card-text" id="p-name" >{{i.product_name}}</label> 
     <p class="card-text" >{{i.description}}</p>
-    <label  class="card-text" id="p-price" value="">{{i.price}}</label> 
+    <label  class="card-text" id="p-price" >{{i.price}}</label> 
      <button  class="btn btn-outline-danger" type="submit" onclick="addHtmlTableRow();" > Add</button>
   </div>
 </div>
      
      	{% endfor %}
  </div> 
-
+<label id="tt">145</label>
  <!--right side--> 
  <div class="container">
             <div class="tab-tab-1">
@@ -29,6 +29,9 @@
                        </tr>
                        
                    </thead>
+                   <tr>
+                       <td></td>
+                   </tr>
                     
                 </table>
             </div>
@@ -36,15 +39,18 @@
 <script type="text/javascript">
     function addHtmlTableRow()
             {
-           // alert("Hello! I am an alert box!!");
-            var table=document.getElementById("table");
-            var newRow = table.insertRow(table.length);
-            var   cell1 = newRow.insertCell(0);
-            var   cell2 = newRow.insertCell(1);
-            p_name=document.getElementById("p-naame");
-            p_price=document.getElementById("p-price");
-            cell1.innerHTML = p_name;
-            cell2.innerHTML = p_price;
+           // 
+            let table=document.getElementById("table");
+            let newRow = table.insertRow(table.length);
+            let   cell1 = newRow.insertCell(0);
+            let   cell2 = newRow.insertCell(1);
+           let  pname=document.getElementById("p-naame").innerHTML;
+            let pprice=document.getElementById("p-price").innerHTML;
+             let a=document.getElementById("tt").innerHTML;
+            cell1.innerHTML = a;
+            //cell2.innerHTML = pprice;
+           alert(pname);
+          // alert(a);
                 
                 
             }
