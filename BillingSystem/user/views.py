@@ -9,5 +9,10 @@ def signup(request):
     elif request.method == 'POST':
         return redirect('/')
 
-def checkUser(request):
-    return render(request,'home.html')
+def signin(request):
+    if request.method == 'GET' :
+     return render(request,'signin.html')
+    elif request.method == 'POST':
+
+
+        return redirect('/')
