@@ -17,19 +17,23 @@ def signin(request):
     if request.method == 'GET' :
      return render(request,'signin.html')
     elif request.method == 'POST':
-       email = request.POST.get('empEmail')
-       password = request.POST.get('empPassword')
+       email = request.POST['empEmail']
+       password = request.POST['empPassword']
        flag = checkLoginDetailsOfEmp(email,password)
 
-       if flag:
-           return render(request,'empDashboard.html')
-       else:
-           return redirect('/signin/')
+    if flag:
+        return render(request,'empDashboard.html')
+    else:
+        return redirect('/signin/')
 
 def checkLoginDetailsOfEmp(email,password):
-    query = 'select email_id from user_emp_login where email_id = %s and password = %s',[email],[password]
-    email_id = emp_login.objects.raw(query)
+    query = "SELECT id,email_id_id FROM user_emp_login where email_id_id = '"+email+"' and password = '"+password+"' LIMIT 1"
+    try:
+        email_id = (emp_login.objects.raw(query)[0]).email_id_id
+    except:
+        email_id=''
     if email_id == email:
-        return True
+       return True
     else:
-        return False
+       return False
+
