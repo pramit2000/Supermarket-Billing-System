@@ -1,16 +1,16 @@
-body{
-	text-align: center;
-	color: darkred;
-	background-color: #92F0E5;
+table { border-collapse: collapse;}
+table, th, td { border-left: 1px solid black; border-bottom: 1px solid black;}
+th, td {
+    padding: 5px;
+    text-align: left; vertical-align: top;
 }
-#cards.card-body{
-	background-color: #92F0E5;
-	font-family: sans-serif;
-	text-transform: capitalize;
-	margin: 7PX;
-	text-shadow: currentColor;
-	padding-left: 2px;
-	padding-right: 2px;
-	padding-top: 2px;
-	padding-bottom: 2px;
+tr.all { background-color: palegreen; }
+tr.all td { border: 1px solid black; }
+tr.other    { background-color: beige; }
+td.chain { border: 1px solid red; }
+td.target { border: 1px solid red; }
+
+#btn{
+    text-align: center;
+    font-weight: 100;
 }
