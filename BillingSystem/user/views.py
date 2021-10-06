@@ -1,4 +1,5 @@
 from django.shortcuts import render,redirect
+from django.contrib import messages
 # Create your views here.
 from .models import emp_login
 
@@ -27,7 +28,8 @@ def signin(request):
     if flag:
         return render(request,'empDashboard.html')
     else:
-        return redirect('/signin/', {"flag": flag})
+        messages.error(request, 'error')
+        return redirect('/signin/')
 
 
 
