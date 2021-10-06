@@ -1,6 +1,13 @@
 {% extends 'base.html'%}
 {% load static %}
+{% block css-external  %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    
+{% endblock css-external  %}
 
+{% block script %}
+    <script type="text/javascript " src="{% static 'js/bucket.js' %}"></script>
+{% endblock script %}
 
 {% block body%} 
 <div class="col-9" style="float: left;">	
@@ -8,52 +15,30 @@
    {% for i in items %}
    <div class="card" style="width: 18rem;" >
   <div class="card-body" id="cards">
-     <label  class="card-text" id="p-name" >{{i.product_name}}</label> 
+     <label  class="card-text" id="p-name" ><b><i>{{i.product_name}}</i></b></label> 
     <p class="card-text" >{{i.description}}</p>
     <label  class="card-text" id="p-price" >{{i.price}}</label> 
-     <button  class="btn btn-outline-danger" type="submit" onclick="addHtmlTableRow();" > Add</button>
+     
+  </div>
+  <div class="card" style="width:5rem;">
+    <button  class="btn btn-outline-danger" type="button" onclick="test();" > Add</button>
   </div>
 </div>
      
      	{% endfor %}
  </div> 
-<label id="tt">145</label>
  <!--right side--> 
  <div class="container">
             <div class="tab-tab-1">
                 <table id="table" border="3">
-                   <thead>
-                       <tr>
-                           <td>Product Name</td><br>
-                           <td>Product Price</td>
-                       </tr>
-                       
-                   </thead>
-                   <tr>
-                       <td></td>
-                   </tr>
+                  <tr>
+                      <th>Product Name</th>
+                      <th>Product Price</th>
+                  </tr>
                     
                 </table>
             </div>
  
-<script type="text/javascript">
-    function addHtmlTableRow()
-            {
-           // 
-            let table=document.getElementById("table");
-            let newRow = table.insertRow(table.length);
-            let   cell1 = newRow.insertCell(0);
-            let   cell2 = newRow.insertCell(1);
-           let  pname=document.getElementById("p-naame").innerHTML;
-            let pprice=document.getElementById("p-price").innerHTML;
-             let a=document.getElementById("tt").innerHTML;
-            cell1.innerHTML = a;
-            //cell2.innerHTML = pprice;
-           alert(pname);
-          // alert(a);
-                
-                
-            }
-</script>  	
+
 		
 {% endblock body %}
