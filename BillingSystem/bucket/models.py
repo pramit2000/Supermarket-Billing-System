@@ -7,3 +7,7 @@ class products(models.Model):
     price = models.FloatField(max_length=7)
     tax = models.FloatField(max_length=3,default=0.0)
     description = models.CharField(max_length=70,blank=True)
+    
+
+    def __str__(self):
+        return self.product_name 
