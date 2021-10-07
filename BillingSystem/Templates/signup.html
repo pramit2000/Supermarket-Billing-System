@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block title %}Signup{% endblock title %}
 {% block body %}
+{% block before_login %}
+{% endblock %}
 	<div class="w-75 p-3" class="position-absolute">
 		<form class="row g-3" action="/signup/" method="post">
 			{% csrf_token %}

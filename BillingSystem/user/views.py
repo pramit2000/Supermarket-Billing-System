@@ -31,7 +31,8 @@ def signin(request):
         messages.error(request, 'error')
         return redirect('/signin/')
 
-
+def logout(request):
+    return redirect('/')
 
 def checkLoginDetailsOfEmp(email,password):
     query = "SELECT id,email_id_id FROM user_emp_login where email_id_id = '"+email+"' and password = '"+password+"' LIMIT 1"
