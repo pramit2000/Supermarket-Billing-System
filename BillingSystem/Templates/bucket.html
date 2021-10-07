@@ -10,25 +10,49 @@
 {% endblock script %}
 
 {% block body%} 
-<div class="col-9" style="float: left;">	
+<div class="col-10" style="float: left;"> 
+    <div class="destinations" id="destinations">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="section_title">
+                            <h2>Products</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row destinations_row">
+                    <div class="col">
+                        <div class="destinations_container item_grid">
 
-   {% for i in items %}
-   <div class="card" style="width: 18rem;" >
-  <div class="card-body" id="cards">
-     <label  class="card-text" id="p-name" ><b><i>{{i.product_name}}</i></b></label> 
-    <p class="card-text" >{{i.description}}</p>
-    <label  class="card-text" id="p-price" >{{i.price}}</label> 
-     
-  </div>
-  <div class="card" style="width:5rem;">
-    <button  class="btn btn-outline-danger" type="button" onclick="test();" > Add</button>
-  </div>
-</div>
-     
-     	{% endfor %}
- </div> 
- <!--right side--> 
- <div class="container">
+                            {% for i in items %}
+                            <!-- Destination -->
+                            <div class="destination item">
+                        
+                                <div class="destination_content">
+                                    <div class="destination_title"><a href="#" id="p-name">{{i.product_name}}</a>
+                                    </div>
+                                    <div class="destination_subtitle">
+                                        <textarea disabled style="height: auto;width: auto;resize: none;border:double 4px orange;">{{i.description}}</textarea>       
+                                    </div>
+                                    <div class="destination_price"><p id="p-price"> Price : {{i.price}}₹</p></div>
+                                </div>
+                                 <div class="card" style="width:5rem;">
+                                 <button  class="btn btn-outline-info" type="button" onclick="test();" > Add</button>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+
+<!--Table to contain the product info-->
+ <div class="col-10" style="float: right;"> 
+    <div class="container">
             <div class="tab-tab-1">
                 <table id="table" border="3">
                   <tr>
@@ -38,7 +62,9 @@
                     
                 </table>
             </div>
- 
+        </div>
+    </div>
+
 
 		
 {% endblock body %}
