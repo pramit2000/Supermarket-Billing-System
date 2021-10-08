@@ -12,11 +12,11 @@
 {% endblock script %}
 
 {% block body%} 
-<div class="col-10" style="float: left;"> 
+<div class="col-6" style="float: left;"> 
     <div class="destinations" id="destinations">
             <div class="container">
                 <div class="row">
-                    <div class="col text-center">
+                    <div class="col text-left">
                         <div class="section_title">
                             <h2>Products</h2>
                         </div>
@@ -34,7 +34,7 @@
                                     <div class="destination_title"><a href="#" id="p-name">{{i.product_name}}</a>
                                     </div>
                                     <div class="destination_subtitle">
-                                        <textarea disabled style="height: auto;width: auto;resize: none;border:double 4px orange;">{{i.description}}</textarea>       
+                                        <textarea disabled style="height: auto;width: auto;resize: none;border:double 4px white;">{{i.description}}</textarea>       
                                     </div>
                                     <div class="destination_price"><p id="p-price" value="Price:">   {{i.price}}₹</p></div>
                                 </div>
@@ -50,22 +50,33 @@
                 </div>
             </div>
         </div>
-    </div>   
+    </div>  
+ 
 
 <!--Table to contain the product info-->
- <div class="col-10" style="float: right;"> 
-    <div class="container">
-            <div class="tab-tab-1">
-                <table id="table" border="3">
-                  <tr>
-                      <th>Product Name</th>
-                      <th>Product Price</th>
-                  </tr>
-                    
-                </table>
-            </div>
-        </div>
-    </div>
+<div class="table-responsive">
+    <div class="col text-left">
+                        <div class="section_title">
+                           <h2>your products are listed below</h2>
+                        </div>
+                    </div>
+
+<table class="table-info table-striped" id="table">
+
+  <thead>
+    <tr class="table-success  table-hover">
+      <th scope="col">Product Name</th>
+      <th scope="col">Price</th>
+      <th scope="col" id="quantity">Quantity</th>
+    </tr>
+  </thead>
+  <tbody id="tbody" class="table-success">
+
+  </tbody>
+</table>
+</div>
+
+
 
 
 		

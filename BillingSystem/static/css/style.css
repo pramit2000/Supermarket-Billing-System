@@ -1,15 +1,7 @@
-table { border-collapse: collapse;}
-table, th, td { border-left: 1px solid black; border-bottom: 1px solid black;}
-th, td {
-    padding: 5px;
-    text-align: left; vertical-align: top;
+caption{
+    font-weight: bolder;
+    color: red;
 }
-tr.all { background-color: palegreen; }
-tr.all td { border: 1px solid black; }
-tr.other    { background-color: beige; }
-td.chain { border: 1px solid red; }
-td.target { border: 1px solid red; }
-
 #btn{
     text-align: center;
     font-weight: 100;
