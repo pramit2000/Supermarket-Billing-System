@@ -64,7 +64,8 @@
 			<br>
 			<div class="col-md-6">
 		<label for="inputPassword4" class="form-label">Password</label>
-		<input type="password" class="form-control" id="inputPassword4" required>
+				<label><span id="invalidPassword"></span></label>
+		<input type="password" class="form-control" id="inputPassword4" required onkeyup="lengthOfPassword();">
 	  </div>
 			<br>
 			<div class="col-md-6">
@@ -84,4 +85,6 @@
 	  </div>
 	</div>
 </form>
+		 {% load static %}
+<script src="{% static 'js/signup.js'%}"></script>
 {% endblock body %}
