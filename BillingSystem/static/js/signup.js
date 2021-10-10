@@ -11,7 +11,7 @@ function lengthOfPassword(){
             lengthOfPasswordError.innerHTML = "     password should not be more than of 12 char";
         else
             lengthOfPasswordError.innerHTML = "";
-	}
+}
 
 function matchPassword(){
 
