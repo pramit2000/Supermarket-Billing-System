@@ -65,12 +65,13 @@
 			<div class="col-md-6">
 		<label for="inputPassword4" class="form-label">Password</label>
 				<label><span id="invalidPassword"></span></label>
-		<input type="password" class="form-control" id="inputPassword4" required onkeyup="lengthOfPassword();">
+		<input type="password" class="form-control" id="inputPassword4" required onkeyup="lengthOfPassword();" />
 	  </div>
 			<br>
 			<div class="col-md-6">
-		<label for="inputConfirmPassword4" class="form-label">Confirm Password</label>
-		<input type="password" class="form-control" id="inputConfirmPassword4" required>
+		<label for="inputConfirmPassword4">Confirm Password</label>
+				<label><span id="matchPassword"></span></label>
+		<input type="password" class="form-control" id="inputConfirmPassword4" required onblur="matchPassword();">
 	  </div>
 	  		<br>
 			<div class="col-md-2">
