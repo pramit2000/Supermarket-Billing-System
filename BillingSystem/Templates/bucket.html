@@ -4,15 +4,15 @@
 {% load static %}
 {% block css-external  %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    
+
 {% endblock css-external  %}
 
 {% block script %}
     <script type="text/javascript " src="{% static 'js/bucket.js' %}"></script>
 {% endblock script %}
 
-{% block body%} 
-<div class="col-6" style="float: left;"> 
+{% block body%}
+<div class="col-6" style="float: left;">
     <div class="destinations" id="destinations">
             <div class="container">
                 <div class="row">
@@ -29,17 +29,17 @@
                             {% for i in items %}
                             <!-- Destination -->
                             <div class="destination item">
-                        
+
                                 <div class="destination_content">
                                     <div class="destination_title"><a href="#" id="p-name" data-product={{i.product_name}}>{{i.product_name}}</a>
                                     </div>
                                     <div class="destination_subtitle">
-                                        <textarea disabled style="height: auto;width: auto;resize: none;border:double 4px white;">{{i.description}}</textarea>       
+                                        <textarea disabled style="height: auto;width: auto;resize: none;border:double 4px white;">{{i.description}}</textarea>
                                     </div>
-                                    <div class="destination_price"><p id="p-price" value="Price:">   {{i.price}}₹</p></div>
+                                    <div class="destination_price"><p id="p-price" value="Price:" data-price={{i.price}}>   {{i.price}}₹</p></div>
                                 </div>
                                  <div class="card" style="width:5rem;">
-                                 <button  class="btn btn-outline-info" data-product={{i.product_name}} type="button" onclick="add_item(event);" > Add</button>
+                                 <button  class="btn btn-outline-info" data-product={{i.product_name}} data-price={{i.price}} type="button" onclick="add_item(event);" > Add</button>
                                 </div>
                             </div>
 
@@ -50,8 +50,8 @@
                 </div>
             </div>
         </div>
-    </div>  
- 
+    </div>
+
 
 <!--Table to contain the product info-->
 <div class="table-responsive">
@@ -79,5 +79,5 @@
 
 
 
-		
+
 {% endblock body %}

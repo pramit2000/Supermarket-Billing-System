@@ -8,6 +8,7 @@ function add_item(event) {
 
    //let p_name=document.getElementById("p-name").innerHTML;
    const p_name=document.querySelectorAll("#p-name");
+   const p_price=document.querySelectorAll("#p-price");
    const buttons = event.currentTarget;
    console.log(JSON.stringify(p_name));
    if(p_name){
@@ -19,14 +20,17 @@ function add_item(event) {
         console.log(p_name[element]);
         cell1.innerHTML = p_name[element].dataset.product;
         }
+        if(buttons.dataset.price == p_price[element].dataset.price){
+            cell2.innerHTML= p_price[element].dataset.price;
+        }
    });
    }
-   let p_price=document.getElementById("p-price").innerHTML;
+   //let p_price=document.getElementById("p-price").innerHTML;
    let quant=1;
     //cell1.innerHTML=p_name;
-    cell2.innerHTML=p_price;
+
     cell4.innerHTML=quant;
-   
+
 
    // alert("added");
 }
