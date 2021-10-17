@@ -31,7 +31,7 @@
                             <div class="destination item">
                         
                                 <div class="destination_content">
-                                    <div class="destination_title"><a href="#" id="p-name">{{i.product_name}}</a>
+                                    <div class="destination_title"><a href="#" id="p-name" data-product={{i.product_name}}>{{i.product_name}}</a>
                                     </div>
                                     <div class="destination_subtitle">
                                         <textarea disabled style="height: auto;width: auto;resize: none;border:double 4px white;">{{i.description}}</textarea>       
@@ -39,7 +39,7 @@
                                     <div class="destination_price"><p id="p-price" value="Price:">   {{i.price}}₹</p></div>
                                 </div>
                                  <div class="card" style="width:5rem;">
-                                 <button  class="btn btn-outline-info" type="button" onclick="add_item();" > Add</button>
+                                 <button  class="btn btn-outline-info" data-product={{i.product_name}} type="button" onclick="add_item(event);" > Add</button>
                                 </div>
                             </div>
 
