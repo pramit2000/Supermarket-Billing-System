@@ -97,3 +97,7 @@ caption{
     color: #181818;
     margin-top: 16px;
 }
+.table-succes #tbody td{
+    text-align: right;
+    margin: 2px 2px;
+} 
