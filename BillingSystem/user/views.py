@@ -15,7 +15,7 @@ def signup(request):
         return render(request,'signup.html')
     elif request.method == 'POST':
         time.sleep(300)
-        return redirect('/')
+        return redirect('/signin')
 
 
 
