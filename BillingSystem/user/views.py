@@ -14,7 +14,7 @@ def signup(request):
     if request.method == 'GET':
         return render(request,'signup.html')
     elif request.method == 'POST':
-        time.sleep(180)
+        time.sleep(300)
         return redirect('/')
 
 
