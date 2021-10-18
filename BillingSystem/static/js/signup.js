@@ -23,3 +23,7 @@ function matchPassword(){
     else
     matchPassword.innerHTML = ""
 }
+function OTP(){
+   // document.getElementById("code").removeAttr("disabled");
+ //console.log("45");
+}

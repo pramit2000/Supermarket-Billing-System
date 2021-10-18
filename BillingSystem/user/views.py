@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 # Create your views here.
+import time
 from .models import emp_login
 
 
@@ -13,6 +14,7 @@ def signup(request):
     if request.method == 'GET':
         return render(request,'signup.html')
     elif request.method == 'POST':
+        time.sleep(180)
         return redirect('/')
 
 
