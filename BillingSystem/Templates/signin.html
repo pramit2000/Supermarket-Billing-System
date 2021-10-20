@@ -11,8 +11,8 @@
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-12 col-md-8 col-lg-6 col-xl-5">
            {% for message in messages %}
-            <div class="alert alert-warning alert-dismissible fade show alert alert-danger" role="alert">
-              <strong>Invalid email id or password!!</strong>
+            <div class="alert alert-success alert-dismissible fade show alert alert-danger" role="alert">
+              <strong>{{message}}</strong>
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             {% endfor %}

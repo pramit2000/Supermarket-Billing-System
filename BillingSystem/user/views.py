@@ -14,7 +14,8 @@ def signup(request):
     if request.method == 'GET':
         return render(request,'signup.html')
     elif request.method == 'POST':
-        time.sleep(300)
+        time.sleep(30)
+        messages.success(request, "User created Succesfully")
         return redirect('/signin')
 
 
