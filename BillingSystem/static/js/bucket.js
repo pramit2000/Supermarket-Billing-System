@@ -10,16 +10,9 @@ function add_item(event) {
    const p_name=document.querySelectorAll("#p-name");
    const p_price=document.querySelectorAll("#p-price");
    const buttons = event.currentTarget;
-<<<<<<< HEAD
   // console.log(JSON.stringify(p_name));
-   if(p_name){
-   Object.keys(p_name).forEach(element => {
-    //console.log("Inside if", typeof p_name);
-   // console.log("Data: ", p_name[element].dataset.product);
-        if(buttons.dataset.product == p_name[element].dataset.product){
-       // console.log("buttons.dataset.product"+ buttons.dataset.product, "p_name[element].dataset.product"+p_name[element].dataset.product);
-      //  console.log(p_name[element]);
-=======
+
+
    //console.log(JSON.stringify(p_name));
    if(p_name){
    Object.keys(p_name).forEach(element => {
@@ -28,7 +21,7 @@ function add_item(event) {
         if(buttons.dataset.product == p_name[element].dataset.product){
         //console.log("buttons.dataset.product"+ buttons.dataset.product, "p_name[element].dataset.product"+p_name[element].dataset.product);
         //console.log(p_name[element]);
->>>>>>> 8aa846f9c5661ac2c4b52de4c90a8198f76daa64
+
         cell1.innerHTML = p_name[element].dataset.product;
         }
         if(buttons.dataset.price == p_price[element].dataset.price){
