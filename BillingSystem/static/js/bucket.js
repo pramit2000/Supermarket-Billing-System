@@ -10,6 +10,7 @@ function add_item(event) {
    const p_name=document.querySelectorAll("#p-name");
    const p_price=document.querySelectorAll("#p-price");
    const buttons = event.currentTarget;
+   let quant=1;
   // console.log(JSON.stringify(p_name));
 
 
@@ -23,17 +24,30 @@ function add_item(event) {
         //console.log(p_name[element]);
 
         cell1.innerHTML = p_name[element].dataset.product;
+        cell2.innerHTML= p_price[element].dataset.price;
+        cell4.innerHTML=quant;
         }
-        if(buttons.dataset.price == p_price[element].dataset.price){
-            cell2.innerHTML= p_price[element].dataset.price;
-        }
+       // if(buttons.dataset.price == p_price[element].dataset.price){
+           
+       // }
    });
    }
+   myData = document.getElementById("table").rows;
+        //console.log(myData)
+        my_liste = []
+        for (var i = 0; i < myData.length; i++) {
+                el = myData[i].children
+                my_el = []
+                my_el.push(el[0].innerText);
+                my_liste.push(my_el);
+        }
+
+                    console.log(my_liste[1]);
    //let p_price=document.getElementById("p-price").innerHTML;
-   let quant=1;
+  
     //cell1.innerHTML=p_name;
 
-    cell4.innerHTML=quant;
+   
 
 
    // alert("added");

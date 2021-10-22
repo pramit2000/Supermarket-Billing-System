@@ -6,7 +6,7 @@ caption{
     text-align: center;
     font-weight: 100;
 }
-..destinations
+.destinations
 {
     width: 100%;
     background: #FFFFFF;
@@ -70,10 +70,7 @@ caption{
     padding-right: 15px;
     margin-bottom: 33px;
 }
-.destination_content
-{
 
-}
 .destination_title
 {
     margin-top: 15px;
@@ -97,7 +94,9 @@ caption{
     color: #181818;
     margin-top: 16px;
 }
-.table-succes #tbody td{
-    text-align: right;
-    margin: 2px 2px;
-} 
+ #table  td, tfoot, th, thead, tr {
+    border: 2px solid firebrick;
+    border-color: inherit;
+    column-gap: initial;
+    row-gap: inherit;
+}
