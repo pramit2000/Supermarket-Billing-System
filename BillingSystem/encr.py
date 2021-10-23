@@ -15,6 +15,6 @@ def encrypt(txt):
 def decrypt(txt):
 
         txt = base64.urlsafe_b64decode(txt)
-        cipher_suite = Fernet(key)#(settings.ENCRYPT_KEY)
+        cipher_suite = Fernet(key)
         decoded_text = cipher_suite.decrypt(txt).decode("ascii")
         return decoded_text
