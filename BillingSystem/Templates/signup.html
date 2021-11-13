@@ -4,12 +4,12 @@
 {% block before_login %}
 {% endblock %}
 	<div class="w-75 p-3" class="position-absolute">
-		<form class="row g-3" action="/signup/" method="post">
+		<form class="row g-3" action="verifyOTP/" method="post">
 			{% csrf_token %}
 
 	<div class="col-md-6">
 		<label for="inputName" class="form-label">Name</label>
-		<input type="text" class="form-control" id="inputName" required>
+		<input type="text" class="form-control" id="inputName" >
 	  </div>
 
 	<div class="col-md-2">
@@ -24,16 +24,16 @@
     </div>
 	<div class="col-md-6">
 		<label for="inputContact" class="form-label">Contact No</label>
-		<input type="text" class="form-control" id="inputContact" required>
+		<input type="text" class="form-control" id="inputContact" >
 	  </div>
 			<div class="col-md-6">
 		<label for="inputCity" class="form-label">City</label>
-		<input type="text" class="form-control" id="inputCity" required>
+		<input type="text" class="form-control" id="inputCity" >
 	  </div>
 
 	  <div class="col-md-4">
 		<label for="inputState" class="form-label">State</label>
-		<select id="inputState" class="form-select" required>
+		<select id="inputState" class="form-select" >
 		  <option selected>Choose...</option>
 		  <option>Andhra Pradesh</option>
 			 <option>Assam</option>
@@ -54,56 +54,36 @@
 	  </div>
 	  <div class="col-md-2">
 		<label for="inputPin" class="form-label">PIN</label>
-		<input type="text" class="form-control" id="inputPin" required>
+		<input type="text" class="form-control" id="inputPin" >
 	  </div>
 			<br>
 			<div class="col-md-6">
 		<label for="inputEmail4" class="form-label">Email</label>
-		<input type="email" class="form-control" id="inputEmail4" required>
+		<input type="email" class="form-control" id="inputEmail4" >
 	  </div>
 			<br>
 			<div class="col-md-6">
 		<label for="inputPassword4" class="form-label">Password</label>
 				<label><span id="invalidPassword"></span></label>
-		<input type="password" class="form-control" id="inputPassword4" required onkeyup="lengthOfPassword();" />
+		<input type="password" class="form-control" id="inputPassword4"  onkeyup="lengthOfPassword();" />
 	  </div>
 			<br>
 			<div class="col-md-6">
 		<label for="inputConfirmPassword4">Confirm Password</label>
 				<label><span id="matchPassword"></span></label>
-		<input type="password" class="form-control" id="inputConfirmPassword4" required onblur="matchPassword();">
+		<input type="password" class="form-control" id="inputConfirmPassword4"  onblur="matchPassword();">
 	  </div>
 	  		<br>
 			<div class="col-md-2">
 			<label for="date">Date</label>
-			<input type="date" class="form-control" id="date" required>
+			<input type="date" class="form-control" id="date" >
 	  		<br>
 
 
 	  <div class="col-12">
 
-		<button type="submit" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign up</button>
+		<button type="submit" class="btn btn-secondary">Sign up</button>
 		<!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Verify OTP to Proceed Further</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       Enter Your Mobile No: <input type="text" name="Number" id="number">
-        <button type="button"class="btn btn-secondary"  onclick="OTP();">Get OTP</button>
-        <br><br>
-        Enter OTP : <input type="text" name="OTP" disabled="disabled" id="code">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Verify</button>
-      </div>
-    </div>
-  </div>
-</div>
 	  </div>
 	</div>
 </form>

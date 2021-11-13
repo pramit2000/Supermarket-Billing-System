@@ -18,7 +18,9 @@ def signup(request):
         messages.success(request, "User created Succesfully")
         return redirect('/signin')
 
-
+def continueToSignup(request):
+    if request.method == 'POST':
+        return render(request,'verifyOTP.html')
 
 def signin(request):
     if request.method == 'GET' :
