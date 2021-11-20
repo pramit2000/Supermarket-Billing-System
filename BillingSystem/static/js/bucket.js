@@ -1,3 +1,6 @@
+ sum=0;
+const list=[];
+
 function add_item(event) {
    let table=document.getElementById("table");
    let tbody=document.getElementById("tbody");
@@ -26,24 +29,17 @@ function add_item(event) {
         cell1.innerHTML = p_name[element].dataset.product;
         cell2.innerHTML= p_price[element].dataset.price;
         cell4.innerHTML=quant;
+        price=p_price[element].dataset.price;
+        list.push(parseFloat(Math.round(price)));
         }
        // if(buttons.dataset.price == p_price[element].dataset.price){
            
        // }
    });
    }
-   myData = document.getElementById("table").rows;
-        //console.log(myData)
-        my_liste = []
-        for (var i = 0; i < myData.length; i++) {
-                el = myData[i].children
-                my_el = []
-                my_el.push(el[0].innerText);
-                my_liste.push(my_el);
-        }
-
-                    console.log(my_liste[1]);
-   //let p_price=document.getElementById("p-price").innerHTML;
+total=(d3.sum(list));
+document.getElementById("total").value=total+"₹";
+console.log(total);
   
     //cell1.innerHTML=p_name;
 

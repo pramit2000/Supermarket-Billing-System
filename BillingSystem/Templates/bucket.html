@@ -12,6 +12,7 @@
 {% endblock script %}
 
 {% block body%}
+<script src='https://d3js.org/d3.v4.min.js'></script>
 <div class="col-6" style="float: left;">
     <div class="destinations" id="destinations">
             <div class="container">
@@ -75,9 +76,9 @@
   </tbody>
 </table>
 <form>
-    
-    <input disabled id="total" placeholder="Total Payable Amount">
-    <input type="submit">
+    <label for="total">Total:</label>
+    <input disabled id="total" placeholder="Total Payable Amount" style="border: 2px solid black; width: min-content;"></label>
+    <input type="submit" name="Proceed to Pay">
 </form>
 </div>
 
