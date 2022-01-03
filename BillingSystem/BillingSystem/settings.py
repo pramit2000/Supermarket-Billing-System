@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'BillingSystem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangoProjectDB',
-        'USER': 'djangoProjectDB1',
-        'PASSWORD': 'root1234',
-        'HOST': 'minordjangoproject.cnyfwjtigm2a.us-west-2.rds.amazonaws.com',
+        'NAME': 'minorproject',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }

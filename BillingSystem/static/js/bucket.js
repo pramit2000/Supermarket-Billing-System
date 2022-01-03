@@ -1,5 +1,6 @@
  sum=0;
 const list=[];
+mytable=document.getElementById("table");
 
 function add_item(event) {
    let table=document.getElementById("table");
@@ -37,9 +38,9 @@ function add_item(event) {
        // }
    });
    }
-total=(d3.sum(list));
-document.getElementById("total").value=total+"₹";
-console.log(total);
+sum=(d3.sum(list));
+document.getElementById("total").value=sum+"₹";
+console.log(sum);
   
     //cell1.innerHTML=p_name;
 
@@ -47,4 +48,16 @@ console.log(total);
 
 
    // alert("added");
+}
+function exportCsv() {
+    var csv = '';
+    var rows = document.querySelectorAll("table tr");
+    for (var i = 0; i < rows.length; i++) {
+        var row = [], cols = rows[i].querySelectorAll("td, th");
+        for (var j = 0; j < cols.length; j++) 
+            row.push(cols[j].innerText);
+        csv += row.join(",") + "\r\n";
+    }
+    // Download CSV file
+    this.downloadCSV(csv, "table.csv");
 }
