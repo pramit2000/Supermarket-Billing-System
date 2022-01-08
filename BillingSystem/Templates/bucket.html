@@ -4,7 +4,41 @@
 {% load static %}
 {% block css-external %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+<style>
+    #table tr th,td {
+        padding: 9px;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        font-family: "Sofia", sans-serif;
+    }
 
+    #tbody td {
+        padding: 7px;
+    }
+
+    #btn:hover {
+        background-color: #28a745;
+        color: whitesmoke;
+    }
+
+    #btn {
+        font-weight: bold;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+    }
+
+    #total {
+        letter-spacing: 1px;
+        word-spacing: 1px;
+    }
+    #head{
+        font-weight: bold;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        font-family: "Sofia", sans-serif;
+    }
+</style>
 {% endblock css-external %}
 
 {% block script %}
@@ -12,89 +46,73 @@
 {% endblock script %}
 
 {% block body%}
-<script src='https://d3js.org/d3.v4.min.js'></script>
-<div class="col-6" style="float: left;">
-    <div class="destinations" id="destinations">
-        <div class="container">
-            <div class="row">
+
+<div class="container-fluid mt-3">
+    <h2 class="text-primary mb-3 border-bottom"> Products </h2>
+
+    <div class="row text-center mb-5">
+        <div class="col-sm-8">
+
+            <div class="row text-center mb-5">
+
+                <!-- Products -->
+                {% for i in items %}
+                <div class="col-sm-4 mb-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="../static/img/product.svg" alt="Card image cap" style="height: 180px;">
+                        <div class="card-body">
+                            <h4><a href="#" style="margin: 5px;" id="p-name" data-product={{i.product_name}}>{{i.product_name}}</a>
+                            </h4>
+                    
+                            <p class="card-text" style="margin: 2px; line-height: 1;">{{i.description}}</p>
+                    
+                            <div class="destination_price">
+                                <p id="p-price" value="Price:" data-price={{i.price}}>{{i.price}}₹</p>
+                            </div>
+                    
+                            <div class="card" style="width:5rem;">
+                                <button class="btn btn-outline-info" data-product={{i.product_name}} data-price={{i.price}} type="button"
+                                    onclick="add_item(event);"> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+        <!-- for Bill-list at right -->
+        <div class="col-sm-4">
+            <div class="table-responsive">
                 <div class="col text-left">
                     <div class="section_title">
-                        <h2>Products</h2>
+                        <h3 id="head">Your Products are Listed Below</h3>
                     </div>
                 </div>
-            </div>
-            <div class="row destinations_row">
-                <div class="col">
 
+                <table class="table table-striped" id="table">
+                    <thead style="background-color: #212529; color: whitesmoke;">
+                        <tr>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
 
-                    <div class="destinations_container item_grid">
+                    </tbody>
+                </table>
 
-                        {% for i in items %}
-                        <!-- Destination -->
-                        <div class="destination item">
-
-                            <div class="destination_content">
-                                <div class="destination_title"><a href="#" id="p-name"
-                                        data-product={{i.product_name}}>{{i.product_name}}</a>
-                                </div>
-                                <div class="destination_subtitle">
-                                    <textarea disabled
-                                        style="height: auto;width: auto;resize: none;border:double 4px white;">{{i.description}}</textarea>
-                                </div>
-                                <div class="destination_price">
-                                    <p id="p-price" value="Price:" data-price={{i.price}}>{{i.price}}₹</p>
-                                </div>
-                            </div>
-                            <div class="card" style="width:5rem;">
-                                <button class="btn btn-outline-info" data-product={{i.product_name}}
-                                    data-price={{i.price}} type="button" onclick="add_item(event);"> Add</button>
-                            </div>
-
-                        </div>
-
-                        {% endfor %}
-
-                    </div>
-
-                </div>
+                <form>
+                    <input type="text" id="total" placeholder="Total Payable Amount" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp" disabled>
+                    <button type="button" class="btn btn-outline-success btn-block mt-1" id="btn">Pay Now</button>
+                </form>
             </div>
         </div>
     </div>
+
 </div>
-
-
-<!--Table to contain the product info-->
-<div class="table-responsive">
-    <div class="col text-left">
-        <div class="section_title">
-            <h2>your products are listed below</h2>
-        </div>
-    </div>
-
-    <table class="table-info table-striped" id="table">
-
-        <thead>
-            <tr class="table-success  table-hover">
-                <th scope="col">Product Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Quantity</th>
-            </tr>
-        </thead>
-        <tbody id="tbody" class="table-danger">
-
-        </tbody>
-    </table>
-    <form>
-        <label for="total">Total:</label>
-        <input disabled id="total" placeholder="Total Payable Amount"
-            style="border: 2px solid black; width: min-content;"></label>
-        <input type="submit" name="Proceed to Pay">
-        <button type="button" onclick="exportCsv();">Download Bill</button>
-    </form>
-</div>
-
-
-
-
 
 {% endblock body %}

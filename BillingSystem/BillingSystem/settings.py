@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'BillingSystem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'minorproject',
+        'NAME': 'prods',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
