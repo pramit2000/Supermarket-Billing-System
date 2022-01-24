@@ -18,5 +18,6 @@ from django.urls import path
 from bucket import views
 urlpatterns = [
  path('',views.bucket,name="bucket"),
+ path('payment/',views.payment,name="payment"),
 ]
 

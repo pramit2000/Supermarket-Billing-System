@@ -5,5 +5,7 @@ from .models import products
 def bucket(request):
     items=products.objects.all()
     return render(request,'bucket.html',{"items":items})
+def payment(request):
+    return render(request,'payment.html')
     
     

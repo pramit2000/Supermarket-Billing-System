@@ -31,6 +31,10 @@
     #total {
         letter-spacing: 1px;
         word-spacing: 1px;
+        text-align: center;
+        font-family: "Sofia", sans-serif;
+        block-size: auto;
+        border: #212529 2px;
     }
     #head{
         font-weight: bold;
@@ -38,11 +42,13 @@
         word-spacing: 1px;
         font-family: "Sofia", sans-serif;
     }
+  
 </style>
 {% endblock css-external %}
 
 {% block script %}
 <script type="text/javascript " src="{% static 'js/bucket.js' %}"></script>
+<script type="text/javascript " src="{% static 'js/payment.js' %}"></script>
 {% endblock script %}
 
 {% block body%}
@@ -81,6 +87,7 @@
 
             </div>
         </div>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
 
         <!-- for Bill-list at right -->
         <div class="col-sm-4">
@@ -104,10 +111,11 @@
                     </tbody>
                 </table>
 
-                <form>
-                    <input type="text" id="total" placeholder="Total Payable Amount" class="form-control"
+                <form id="form-pay">
+                    <input type="text" id="total" placeholder="Total Payable Amount" value=""  class="form-control"
                         id="exampleInputEmail1" aria-describedby="emailHelp" disabled>
-                    <button type="button" class="btn btn-outline-success btn-block mt-1" id="btn">Pay Now</button>
+                       
+                    <button type="submit"  class="btn btn-outline-success btn-block mt-1" id="btn" >Pay Now</button>
                 </form>
             </div>
         </div>

@@ -32,6 +32,7 @@ function add_item(event) {
         cell4.innerHTML=quant;
         price=p_price[element].dataset.price;
         list.push(parseFloat(Math.round(price)));
+        console.log(list);
         }
        // if(buttons.dataset.price == p_price[element].dataset.price){
            
@@ -39,7 +40,7 @@ function add_item(event) {
    });
    }
 sum=(d3.sum(list));
-document.getElementById("total").value=sum+"₹";
+document.getElementById("tt").value=sum+"₹";
 console.log(sum);
   
     //cell1.innerHTML=p_name;
