@@ -40,7 +40,7 @@ function add_item(event) {
    });
    }
 sum=(d3.sum(list));
-document.getElementById("tt").value=sum+"₹";
+document.getElementById("total").value=sum+"₹";
 console.log(sum);
   
     //cell1.innerHTML=p_name;
