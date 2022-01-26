@@ -1,8 +1,22 @@
-{% extends 'base.html' %}
-{% block after_login %}
-{% endblock %}
-{% block title %}Payment{% endblock title %}
-{% block body %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+  </head>
+  <body>
+    
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/payment.css' %}">
 <div class="checkout-panel">
     <div class="panel-body">
       <h2 class="title">Checkout</h2>
@@ -23,7 +37,7 @@
    
           <div class="radio-input">
             <input id="card" type="radio" name="payment">
-            Pay £340.00 with credit card
+            {{total}}
           </div>
         </label>
    
@@ -31,7 +45,7 @@
           <img src="BillingSystem\static\img\paypal_logo.png"/>
           <div class="radio-input">
             <input id="paypal" type="radio" name="payment">
-            Pay £340.00 with PayPal
+            {{total}}
           </div>
         </label>
       </div>
@@ -68,4 +82,8 @@
       <button class="btn next-btn">Next Step</button>
     </div>
   </div>
-{% endblock body %}
+>
+    
+    <script src="" async defer></script>
+  </body>
+</html>
